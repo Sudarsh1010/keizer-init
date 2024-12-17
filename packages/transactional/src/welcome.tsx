@@ -14,7 +14,11 @@ const WelcomeEmail: FC = () => {
 	);
 };
 
-const welcomeEmailHtml = await render(<WelcomeEmail />);
+let welcomeEmailHtml: string;
+
+(async () => {
+	welcomeEmailHtml = await render(<WelcomeEmail />);
+})();
 
 export { WelcomeEmail, welcomeEmailHtml };
 export default WelcomeEmail;

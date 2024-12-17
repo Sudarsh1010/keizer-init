@@ -3,8 +3,6 @@ import { Button } from "@repo/ui/components/ui/button";
 import { welcomeEmailHtml } from "@repo/transactional";
 
 export default function Home() {
-	console.log(welcomeEmailHtml);
-
 	return (
 		<main>
 			<ol>
