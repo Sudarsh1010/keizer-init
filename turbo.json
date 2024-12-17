@@ -16,6 +16,17 @@
     "dev": {
       "cache": false,
       "persistent": true
+    },
+    "db:generate": {
+      "env": ["DATABASE_URL"],
+      "outputs": []
+    },
+    "db:migrate": {
+      "env": ["DATABASE_URL"],
+      "outputs": []
+    },
+    "db:seed": {
+      "outputs": []
     }
   }
 }
