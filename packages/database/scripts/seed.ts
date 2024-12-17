@@ -2,7 +2,6 @@ import "dotenv/config";
 
 import { client, db } from "@/database";
 import { comments, posts, users } from "@/schema";
-import { eq } from "drizzle-orm";
 
 const times = (v: number) =>
   Array(v)

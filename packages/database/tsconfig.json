@@ -5,7 +5,7 @@
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {
-      "@repo/db/*": ["./src/*"]
+      "@repo/database/*": ["./src/*"]
     }
   }
 }
