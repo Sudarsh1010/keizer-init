@@ -1,7 +1,7 @@
 import "dotenv/config";
 
-import { client, db } from "@/database";
-import { comments, posts, users } from "@/schema";
+import { db } from "@repo/database/database";
+import { posts, users } from "@repo/database/schema";
 
 const times = (v: number) =>
   Array(v)
@@ -9,14 +9,6 @@ const times = (v: number) =>
     .map((_, i) => i + 1);
 
 const main = async (): Promise<void> => {
-  const res = await db.query.posts.findMany({
-    with: {
-      comments: {
-        where: (comments, { eq }) => eq(comments.authorId, 1),
-      },
-    },
-  });
-
   let n = 0;
 
   for (const i of times(10)) {
@@ -24,8 +16,9 @@ const main = async (): Promise<void> => {
   }
 
   n = 0;
-  for (const author of await db.query.users.findMany()) {
-    for (const _ of times(5)) {
+  for (const author of await db.select().from(users)) {
+    for (const _i of times(5)) {
+      console.log(_i);
       n += 1;
 
       await db.insert(posts).values({
@@ -36,22 +29,6 @@ const main = async (): Promise<void> => {
     }
   }
 
-  n = 0;
-  for (const post of await db.query.posts.findMany({
-    with: { author: true },
-  })) {
-    for (const _ of times(5)) {
-      n += 1;
-
-      await db.insert(comments).values({
-        authorId: post.id,
-        postId: post.id,
-        text: `comment ${n}`,
-      });
-    }
-  }
-
-  await client.end();
   process.exit(0);
 };
 
