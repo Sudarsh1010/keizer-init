@@ -1,31 +1,32 @@
 {
-  "name": "web",
-  "version": "0.1.0",
-  "type": "module",
-  "private": true,
-  "scripts": {
-    "dev": "next dev --turbopack",
-    "build": "next build",
-    "start": "next start",
-    "lint": "next lint --max-warnings 0",
-    "check-types": "tsc --noEmit"
-  },
-  "dependencies": {
-    "@repo/ui": "workspace:*",
-    "next": "catalog:",
-    "react": "catalog:react19",
-    "react-dom": "catalog:react19"
-  },
-  "devDependencies": {
-    "@repo/eslint-config": "workspace:*",
-    "@repo/typescript-config": "workspace:*",
-    "@types/node": "catalog:",
-    "@types/react": "catalog:react19",
-    "@types/react-dom": "catalog:react19",
-    "autoprefixer": "^10.4.20",
-    "eslint": "catalog:",
-    "postcss": "^8.4.49",
-    "tailwindcss": "catalog:",
-    "typescript": "catalog:"
-  }
+	"name": "web",
+	"version": "0.1.0",
+	"type": "module",
+	"private": true,
+	"scripts": {
+		"dev": "next dev --turbopack",
+		"build": "next build",
+		"start": "next start",
+		"lint": "next lint --max-warnings 0",
+		"check-types": "tsc --noEmit"
+	},
+	"dependencies": {
+		"@repo/ui": "workspace:*",
+		"@repo/email": "workspace:*",
+		"next": "catalog:",
+		"react": "catalog:react19",
+		"react-dom": "catalog:react19"
+	},
+	"devDependencies": {
+		"@repo/eslint-config": "workspace:*",
+		"@repo/typescript-config": "workspace:*",
+		"@types/node": "catalog:",
+		"@types/react": "catalog:react19",
+		"@types/react-dom": "catalog:react19",
+		"autoprefixer": "^10",
+		"eslint": "catalog:",
+		"postcss": "^8",
+		"tailwindcss": "catalog:",
+		"typescript": "catalog:"
+	}
 }
