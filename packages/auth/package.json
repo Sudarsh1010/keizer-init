@@ -1,0 +1,27 @@
+{
+  "name": "@repo/auth",
+  "type": "module",
+  "scripts": {
+    "dev": "tsc --watch",
+    "build": "tsc",
+    "lint": "eslint ."
+  },
+  "exports": {
+    "./session": {
+      "types": "./src/session.ts",
+      "default": "./dist/session.js"
+    }
+  },
+  "devDependencies": {
+    "@repo/eslint-config": "workspace:*",
+    "@repo/typescript-config": "workspace:*",
+    "typescript": "catalog:",
+    "eslint": "catalog:",
+    "@types/node": "catalog:"
+  },
+  "dependencies": {
+    "@repo/database": "workspace:*",
+    "@oslojs/crypto": "^1.0.1",
+    "@oslojs/encoding": "^1.1.0"
+  }
+}

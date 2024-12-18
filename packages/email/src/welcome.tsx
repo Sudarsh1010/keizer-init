@@ -1,4 +1,4 @@
-import { Html, Button, render } from "@react-email/components";
+import { Button, Html, render } from "@react-email/components";
 import { FC } from "react";
 
 const WelcomeEmail: FC = () => {
@@ -18,5 +18,5 @@ const getWelcomeEmailHtml = async () => {
 	return await render(<WelcomeEmail />);
 };
 
-export { WelcomeEmail, getWelcomeEmailHtml };
+export { getWelcomeEmailHtml,WelcomeEmail };
 export default WelcomeEmail;
