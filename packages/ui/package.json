@@ -16,6 +16,7 @@
     "@repo/typescript-config": "workspace:*",
     "@types/node": "catalog:",
     "@types/react": "catalog:react19",
+    "@types/react-dom": "catalog:react19",
     "autoprefixer": "^10",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
