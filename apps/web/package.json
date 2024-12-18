@@ -12,7 +12,7 @@
 	},
 	"dependencies": {
 		"@repo/ui": "workspace:*",
-		"@repo/transactional": "workspace:*",
+		"@repo/email": "workspace:*",
 		"next": "catalog:",
 		"react": "catalog:react19",
 		"react-dom": "catalog:react19"

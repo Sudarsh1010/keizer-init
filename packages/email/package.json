@@ -1,5 +1,5 @@
 {
-	"name": "@repo/transactional",
+	"name": "@repo/email",
 	"type": "module",
 	"version": "1.0.0",
 	"description": "",
@@ -15,11 +15,14 @@
 		"lint": "eslint ."
 	},
 	"license": "MIT",
+	"peerDependencies": {
+		"react": "catalog:react19"
+	},
 	"dependencies": {
 		"@react-email/components": "^0.0.31",
-		"@types/react": "^19.0.1",
-		"react": "^19.0.0",
-		"react-dom": "^19.0.0",
+		"@types/node": "catalog:",
+		"@types/react": "catalog:react19",
+		"react-dom": "catalog:react19",
 		"react-email": "3.0.4"
 	},
 	"devDependencies": {

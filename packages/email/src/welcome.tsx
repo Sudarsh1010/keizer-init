@@ -1,9 +1,9 @@
+import { Html, Button, render } from "@react-email/components";
 import { FC } from "react";
-import { Button, Html, render } from "@react-email/components";
 
 const WelcomeEmail: FC = () => {
 	return (
-		<Html>
+		<Html lang="en">
 			<Button
 				href="https://example.com"
 				style={{ background: "#000", color: "#fff", padding: "12px 20px" }}
@@ -14,11 +14,9 @@ const WelcomeEmail: FC = () => {
 	);
 };
 
-let welcomeEmailHtml: string;
+const getWelcomeEmailHtml = async () => {
+	return await render(<WelcomeEmail />);
+};
 
-(async () => {
-	welcomeEmailHtml = await render(<WelcomeEmail />);
-})();
-
-export { WelcomeEmail, welcomeEmailHtml };
+export { WelcomeEmail, getWelcomeEmailHtml };
 export default WelcomeEmail;
