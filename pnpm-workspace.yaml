@@ -11,6 +11,7 @@ catalog:
   "@types/node": ^20
   "zod": ^3.24.1
   "next": ^15.1.0
+  "drizzle-orm": ^0.38.2
 
 catalogs:
   react19:

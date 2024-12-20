@@ -1,4 +1,4 @@
-import "@repo/ui/globals.css";
+import "~/styles/globals.css";
 
 import { DocsLayout } from "fumadocs-ui/layouts/docs";
 import { RootProvider } from "fumadocs-ui/provider";
