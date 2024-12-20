@@ -4,8 +4,9 @@ import {
   encodeHexLowerCase,
 } from "@oslojs/encoding";
 import { db, sessionTable, userTable } from "@repo/database";
-import { UUID } from "crypto";
 import { eq } from "@repo/database";
+import { UUID } from "crypto";
+
 import { SESSION_EXPIRE_TIME, SESSION_EXPIRING_SOON } from "./constants.js";
 
 export function generateSessionToken(): string {

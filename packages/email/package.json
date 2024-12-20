@@ -1,34 +1,33 @@
 {
-	"name": "@repo/email",
-	"type": "module",
-	"version": "1.0.0",
-	"description": "",
-	"private": true,
-	"publishConfig": {
-		"access": "public"
-	},
-	"exports": {
-		".": "./src/index.ts"
-	},
-	"scripts": {
-		"dev": "email dev --dir src",
-		"lint": "eslint ."
-	},
-	"license": "MIT",
-	"peerDependencies": {
-		"react": "catalog:react19"
-	},
-	"dependencies": {
-		"@react-email/components": "^0.0.31",
-		"@types/node": "catalog:",
-		"@types/react": "catalog:react19",
-		"react-dom": "catalog:react19",
-		"react-email": "3.0.4"
-	},
-	"devDependencies": {
-		"@repo/eslint-config": "workspace:*",
-		"@repo/typescript-config": "workspace:*",
-		"eslint": "catalog:",
-		"typescript": "catalog:"
-	}
+  "name": "@repo/email",
+  "type": "module",
+  "version": "1.0.0",
+  "description": "",
+  "private": true,
+  "publishConfig": {
+    "access": "public",
+    "lint": "eslint ."
+  },
+  "exports": {
+    ".": "./src/index.ts"
+  },
+  "scripts": {
+    "dev": "email dev --dir src",
+    "lint": "eslint ."
+  },
+  "license": "MIT",
+  "dependencies": {
+    "react": "catalog:react19",
+    "@react-email/components": "^0.0.31",
+    "react-dom": "catalog:react19",
+    "react-email": "3.0.4"
+  },
+  "devDependencies": {
+    "@types/node": "catalog:",
+    "@types/react": "catalog:react19",
+    "@repo/eslint-config": "workspace:*",
+    "@repo/typescript-config": "workspace:*",
+    "eslint": "catalog:",
+    "typescript": "catalog:"
+  }
 }
