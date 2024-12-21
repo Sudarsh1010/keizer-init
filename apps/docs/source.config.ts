@@ -2,11 +2,11 @@ import { defineCollections, metaSchema } from "fumadocs-mdx/config";
 
 export const docs = defineCollections({
   type: "doc",
-  dir: "content/docs",
+  dir: "src/content/docs",
 });
 
 export const meta = defineCollections({
   type: "meta",
-  dir: "content/docs",
+  dir: "src/content/docs",
   schema: metaSchema,
 });

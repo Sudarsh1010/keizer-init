@@ -1,4 +1,13 @@
-import { nextJsConfig } from "@repo/eslint-config/next-js";
+import nextJsConfig from "@repo/eslint-config/nextjs";
+import baseConfig from "@repo/eslint-config/base";
+import reactConfig from "@repo/eslint-config/react";
 
-/** @type {import("eslint").Linter.Config} */
-export default nextJsConfig;
+/** @type {import('typescript-eslint').Config} */
+export default [
+  {
+    ignores: ["dist/**"],
+  },
+  ...baseConfig,
+  ...reactConfig,
+  ...nextJsConfig,
+];

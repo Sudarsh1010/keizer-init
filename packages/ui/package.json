@@ -11,21 +11,15 @@
     "react": "catalog:react19"
   },
   "devDependencies": {
-    "@radix-ui/react-slot": "^1.1.1",
     "@repo/eslint-config": "workspace:*",
-    "@repo/typescript-config": "workspace:*",
+    "@repo/tsconfig": "workspace:*",
     "@types/node": "catalog:",
     "@types/react": "catalog:react19",
     "@types/react-dom": "catalog:react19",
     "autoprefixer": "^10",
-    "class-variance-authority": "^0.7.1",
-    "clsx": "^2.1.1",
-    "lucide-react": "catalog:",
     "postcss": "^8",
     "postcss-load-config": "^6",
-    "tailwind-merge": "^2.5.5",
     "tailwindcss": "catalog:",
-    "tailwindcss-animate": "^1.0.7",
     "typescript": "catalog:"
   },
   "exports": {
@@ -40,6 +34,13 @@
     "./components/*": "./src/components/*.tsx"
   },
   "dependencies": {
+    "lucide-react": "catalog:",
+    "class-variance-authority": "^0.7.1",
+    "clsx": "^2.1.1",
+    "tailwind-merge": "^2.5.5",
+    "tailwindcss-animate": "^1.0.7",
+    "@radix-ui/react-slot": "^1.1.1",
     "@radix-ui/react-avatar": "^1.1.2"
-  }
+  },
+  "prettier": "@repo/prettier-config"
 }
