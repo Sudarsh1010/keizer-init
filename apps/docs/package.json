@@ -22,7 +22,7 @@
   },
   "devDependencies": {
     "@repo/eslint-config": "workspace:*",
-    "@repo/typescript-config": "workspace:*",
+    "@repo/tsconfig": "workspace:*",
     "@types/node": "catalog:",
     "@types/react": "catalog:react19",
     "@types/react-dom": "catalog:react19",
@@ -32,5 +32,6 @@
     "eslint": "catalog:",
     "tailwindcss": "catalog:",
     "typescript": "catalog:"
-  }
+  },
+  "prettier": "@repo/prettier-config"
 }

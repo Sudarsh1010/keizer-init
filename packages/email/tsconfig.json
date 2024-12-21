@@ -1,11 +1,12 @@
 {
-	"extends": "@repo/typescript-config/react-library.json",
-	"include": ["src"],
-	"exclude": ["node_modules"],
-	"compilerOptions": {
-		"baseUrl": ".",
-		"paths": {
-			"@repo/email/*": ["./src/*"]
-		}
-	}
+  "extends": "@repo/tsconfig/internal-package.json",
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "~/*": ["./*"]
+    },
+    "jsx": "preserve"
+  },
+  "include": ["."],
+  "exclude": ["node_modules"]
 }

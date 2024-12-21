@@ -3,9 +3,13 @@ import {
   encodeBase32LowerCaseNoPadding,
   encodeHexLowerCase,
 } from "@oslojs/encoding";
-import { db, sessionTable, userTable } from "@repo/database";
-import { eq } from "@repo/database";
-import { UUID } from "crypto";
+import {
+  deleteSession,
+  getSessionWithUser,
+  insertSession,
+  updateSession,
+} from "@repo/db/actions/session";
+import type { UUID } from "crypto";
 
 import { SESSION_EXPIRE_TIME, SESSION_EXPIRING_SOON } from "./constants.js";
 
@@ -16,12 +20,17 @@ export function generateSessionToken(): string {
   return token;
 }
 
+export const getCurrentSession = (token: string) => {
+  const result = validateSessionToken(token);
+  return result;
+};
+
 export async function createSession(
   token: string,
   userId: UUID,
 ): Promise<string> {
   const sessionId = encodeHexLowerCase(sha256(new TextEncoder().encode(token)));
-  await db.insert(sessionTable).values({
+  await insertSession({
     id: sessionId,
     userId,
     expiresAt: new Date(Date.now() + SESSION_EXPIRE_TIME),
@@ -31,34 +40,23 @@ export async function createSession(
 
 export async function validateSessionToken(token: string) {
   const sessionId = encodeHexLowerCase(sha256(new TextEncoder().encode(token)));
-
-  const result = await db
-    .select({ user: userTable, session: sessionTable })
-    .from(sessionTable)
-    .innerJoin(userTable, eq(sessionTable.userId, userTable.id))
-    .where(eq(sessionTable.id, sessionId))
-    .limit(1);
-
-  if (!result[0]) return { session: null, user: null };
-
-  const { user, session } = result[0];
+  const result = await getSessionWithUser(sessionId);
+  if (!result) return { session: null, user: null };
+  const { user, session } = result;
 
   if (Date.now() >= session.expiresAt.getTime()) {
-    await db.delete(sessionTable).where(eq(sessionTable.id, session.id));
+    await deleteSession(sessionId);
     return { session: null, user: null };
   }
 
   if (Date.now() >= session.expiresAt.getTime() - SESSION_EXPIRING_SOON) {
     session.expiresAt = new Date(Date.now() + SESSION_EXPIRE_TIME);
-    await db
-      .update(sessionTable)
-      .set({ expiresAt: session.expiresAt })
-      .where(eq(sessionTable.id, session.id));
+    await updateSession({ expiresAt: session.expiresAt }, session.id);
   }
 
   return { session, user };
 }
 
 export async function invalidateSession(sessionId: string): Promise<void> {
-  await db.delete(sessionTable).where(eq(sessionTable.id, sessionId));
+  await deleteSession(sessionId);
 }
