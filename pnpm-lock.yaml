@@ -64,7 +64,7 @@ importers:
   .:
     devDependencies:
       prettier:
-        specifier: ^3.2.5
+        specifier: 'catalog:'
         version: 3.3.3
       turbo:
         specifier: ^2.3.3
@@ -103,6 +103,9 @@ importers:
       '@repo/eslint-config':
         specifier: workspace:*
         version: link:../../tooling/eslint
+      '@repo/prettier-config':
+        specifier: workspace:^
+        version: link:../../tooling/prettier
       '@repo/tsconfig':
         specifier: workspace:*
         version: link:../../tooling/typescript
@@ -185,6 +188,9 @@ importers:
       '@repo/eslint-config':
         specifier: workspace:*
         version: link:../../tooling/eslint
+      '@repo/prettier-config':
+        specifier: workspace:^
+        version: link:../../tooling/prettier
       '@repo/tsconfig':
         specifier: workspace:*
         version: link:../../tooling/typescript
@@ -231,6 +237,9 @@ importers:
       '@repo/eslint-config':
         specifier: workspace:*
         version: link:../../tooling/eslint
+      '@repo/prettier-config':
+        specifier: workspace:^
+        version: link:../../tooling/prettier
       '@repo/tsconfig':
         specifier: workspace:*
         version: link:../../tooling/typescript
@@ -299,6 +308,9 @@ importers:
       '@repo/eslint-config':
         specifier: workspace:*
         version: link:../../tooling/eslint
+      '@repo/prettier-config':
+        specifier: workspace:^
+        version: link:../../tooling/prettier
       '@repo/tsconfig':
         specifier: workspace:*
         version: link:../../tooling/typescript
@@ -336,6 +348,9 @@ importers:
       '@repo/eslint-config':
         specifier: workspace:*
         version: link:../../tooling/eslint
+      '@repo/prettier-config':
+        specifier: workspace:^
+        version: link:../../tooling/prettier
       '@repo/tsconfig':
         specifier: workspace:*
         version: link:../../tooling/typescript
@@ -379,6 +394,9 @@ importers:
       '@repo/eslint-config':
         specifier: workspace:*
         version: link:../../tooling/eslint
+      '@repo/prettier-config':
+        specifier: workspace:^
+        version: link:../../tooling/prettier
       '@repo/tsconfig':
         specifier: workspace:*
         version: link:../../tooling/typescript
@@ -416,6 +434,9 @@ importers:
       '@repo/eslint-config':
         specifier: workspace:*
         version: link:../../tooling/eslint
+      '@repo/prettier-config':
+        specifier: workspace:^
+        version: link:../../tooling/prettier
       '@repo/tsconfig':
         specifier: workspace:*
         version: link:../../tooling/typescript
@@ -462,9 +483,6 @@ importers:
       '@next/eslint-plugin-next':
         specifier: ^14.2.15
         version: 14.2.21
-      eslint-config-prettier:
-        specifier: ^9.1.0
-        version: 9.1.0(eslint@9.15.0(jiti@1.21.6))
       eslint-plugin-import:
         specifier: ^2.31.0
         version: 2.31.0(@typescript-eslint/parser@8.15.0(eslint@9.15.0(jiti@1.21.6))(typescript@5.7.2))(eslint@9.15.0(jiti@1.21.6))
@@ -499,6 +517,9 @@ importers:
       eslint:
         specifier: 'catalog:'
         version: 9.15.0(jiti@1.21.6)
+      eslint-config-prettier:
+        specifier: ^9.1.0
+        version: 9.1.0(eslint@9.15.0(jiti@1.21.6))
       eslint-plugin-prettier:
         specifier: ^5.2.1
         version: 5.2.1(@types/eslint@9.6.1)(eslint-config-prettier@9.1.0(eslint@9.15.0(jiti@1.21.6)))(eslint@9.15.0(jiti@1.21.6))(prettier@3.3.3)
